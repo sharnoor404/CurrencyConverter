@@ -34,9 +34,26 @@ class MainActivity : AppCompatActivity() {
 
 //the code for this may cause error incase url not found or if website changes its url
     //therefore it is better to embed the code in try and catch block
-            TODO("Not yet implemented")
-        }
+
+    try{
+        url=URL(params[0])
+//grabs url from inout parameter params
+        httpURLConnection=url.openConnection() as HttpURLConnection
+
+        val inputStream=httpURLConnection.inputStream
+
+        val inputStreamReader=InputStreamReader(inputStream)
+//input stream reader helps to read/interpret the downloaded data
+
         
+    }catch (e:Exception){
+        e.printStackTrace()
+    }
+
+
+    TODO("Not yet implemented")
+        }
+
 //execution of downloaded data in done in the below function
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
