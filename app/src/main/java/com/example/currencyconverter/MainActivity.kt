@@ -3,6 +3,7 @@ package com.example.currencyconverter
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import org.json.JSONObject
 import java.io.InputStreamReader
 import java.lang.Exception
 import java.net.HttpCookie
@@ -14,6 +15,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val downloadData=Download()
+        try{
+            //enter url below
+            val url=""
+            downloadData.execute(url)
+
+        }catch(e:Exception){
+            e.printStackTrace()
+
+        }
+
+
     }
 
     //first parameter corresponds to input which will be of the format string,here i dont wish to show any progress ti the user
@@ -64,11 +78,23 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    TODO("Not yet implemented")
         }
 
 //execution of downloaded data in done in the below function
         override fun onPostExecute(result: String?) {
+
+
+    try{
+        //just printing the downloaded content
+        val jSONObject=JSONObject(result)
+        println(jSONObject)
+
+
+    }catch(e:Exception){
+        e.printStackTrace()
+    }
+
+
             super.onPostExecute(result)
         }
 
