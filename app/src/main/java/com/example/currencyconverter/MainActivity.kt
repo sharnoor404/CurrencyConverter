@@ -88,6 +88,14 @@ class MainActivity : AppCompatActivity() {
         //just printing the downloaded content
         val jSONObject=JSONObject(result)
         println(jSONObject)
+        //grabbing individual entities thorough JSON object
+        val base=jSONObject.getString("base")
+        println(base)
+        val date=jSONObject.getString("date")
+        println(date)
+        val rates=jSONObject.getString("rates")
+        println(rates)
+
 
 
     }catch(e:Exception){
