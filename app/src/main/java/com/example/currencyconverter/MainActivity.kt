@@ -113,6 +113,10 @@ class MainActivity : AppCompatActivity() {
         val czk=newJsonObject.getString("CZK")
         val tl=newJsonObject.getString("TRY")
 
+        chfText.text="CHF: "+ chf
+        czkText.text="CZK: "+ czk
+        tryText.text="TRY: "+tl
+
 
 
     }catch(e:Exception){
