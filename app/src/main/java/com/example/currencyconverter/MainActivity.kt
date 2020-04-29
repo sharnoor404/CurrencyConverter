@@ -3,6 +3,8 @@ package com.example.currencyconverter
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import java.io.InputStreamReader
 import java.lang.Exception
@@ -16,18 +18,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+    }
+
+    fun get(view: View){
         val downloadData=Download()
         try{
             //enter url below
             val url=""
-            downloadData.execute(url)
+            //we will pass only the common part in the url
+            val chosenBase=editText.text.toString()
+            //rest half will be he one chosen by user
+            //say if url has USD as its part,we will remove it and append whatever currency the user asks to get
+
+            downloadData.execute(url+chosenBase)
+
 
         }catch(e:Exception){
             e.printStackTrace()
 
         }
-
-
     }
 
     //first parameter corresponds to input which will be of the format string,here i dont wish to show any progress ti the user
