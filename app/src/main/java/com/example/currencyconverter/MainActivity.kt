@@ -45,9 +45,22 @@ class MainActivity : AppCompatActivity() {
         val inputStreamReader=InputStreamReader(inputStream)
 //input stream reader helps to read/interpret the downloaded data
 
+        var data=inputStreamReader.read()
+        //data stores the data that inputStream reader has read
+
+        while(data>0){//loop runs till we have something left in data
+            val character=data.toChar()
+            result+=character
+            data=inputStreamReader.read()
+
+        }
+
+        return result
+        //return empty string if nothing is read as data
 
     }catch (e:Exception){
         e.printStackTrace()
+        return result
     }
 
 
