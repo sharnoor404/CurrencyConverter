@@ -96,6 +96,14 @@ class MainActivity : AppCompatActivity() {
         val rates=jSONObject.getString("rates")
         println(rates)
 
+        //to grab items that are particular to rates we have to dive deep into rates
+        //therefore we create a new object
+        val newJsonObject=JSONObject(rates)
+        val chf=newJsonObject.getString("CHF")
+        println(chf)
+        val czk=newJsonObject.getString("CZK")
+        val tl=newJsonObject.getString("TRY")
+
 
 
     }catch(e:Exception){
