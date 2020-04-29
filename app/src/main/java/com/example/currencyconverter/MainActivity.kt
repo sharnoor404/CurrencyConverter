@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         val inputStreamReader=InputStreamReader(inputStream)
 //input stream reader helps to read/interpret the downloaded data
 
-        
+
     }catch (e:Exception){
         e.printStackTrace()
     }
