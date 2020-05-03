@@ -1,0 +1,1 @@
+An android application that converts one currency to another by using real time information from other websites using JSON objects.
